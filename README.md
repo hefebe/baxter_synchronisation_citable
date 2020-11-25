@@ -1,4 +1,4 @@
-# Baxter_Synchronisation_Archive
+# baxter_synchronisation_citable
 
 Archived code for publication "Synchronisation-Based Control for a Collaborative Robot". Running the Simulator_Launcher.launch file will launch both necessary nodes and begin the experiment.
 
