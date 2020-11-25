@@ -1,0 +1,21 @@
+<launch>
+
+<!-- arguments -->
+<arg name="K" />
+
+<arg name="g" />
+
+<arg name="t" />
+
+<arg name="T" />
+
+<arg name="len" />
+
+<!-- nodes -->
+<node pkg="baxter_synchronisation" type="master_unit.py" name="master_unit" args="-W 1 -S 0" required="true"/>
+
+<node pkg="baxter_synchronisation" type="newslave_unit.py" name="newslave_unit" args="-K $(arg K) -g $(arg g) -t $(arg t) -T $(arg T)" required="true"/>
+
+<node pkg="rosbag" type="record" name="record" args="-o relax_$(arg K)_$(arg g)_$(arg T)_ --duration $(arg len) -e /*/(Mast|Slave)" required="true"/>
+
+</launch>
